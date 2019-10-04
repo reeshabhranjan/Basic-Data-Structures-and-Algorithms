@@ -26,20 +26,18 @@ int main()
 	{
 		mid = int((left + right)/2);
 
-		if(element == A[mid])
-		{
-			cout << "\n Element " << element << " found at index : " << mid << endl;
-			break;
-		}
-		
-		else if(element < A[mid])
+		if(element <= A[mid])
 			right = mid;
 		
 		else if(element > A[mid]) // Or simply, use : else
 			left = mid;
 	}
-
-	if(right <= left + 1)
+	
+	if (A[left] == element)
+		cout << "\n Element " << element << " found at index : " << left << endl;
+	else if (A[right] == element)
+		cout << "\n Element " << element << " found at index : " << right << endl;
+	else
 		cout << "\n Element not found\n";
 
 	return 0;
